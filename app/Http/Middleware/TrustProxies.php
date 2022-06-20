@@ -9,10 +9,12 @@ class TrustProxies extends Middleware
 {
     /**
      * The trusted proxies for this application.
+     * 
+     * herockのロードバランサーの通信がhttpのため、設定を全てにして通信を信頼させる。
      *
      * @var array<int, string>|string|null
      */
-    protected $proxies;
+    protected $proxies = '*';
 
     /**
      * The headers that should be used to detect proxies.
